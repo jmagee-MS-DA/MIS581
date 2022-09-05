@@ -1,0 +1,12 @@
+PROC SQL;
+CREATE TABLE WORK.query AS
+SELECT month_date_yyyymm , 'state'n , state_id , median_listing_price , median_listing_price_mm , median_listing_price_yy , active_listing_count , active_listing_count_mm , active_listing_count_yy , median_days_on_market , median_days_on_market_mm , median_days_on_market_yy , new_listing_count , new_listing_count_mm , new_listing_count_yy , price_increased_count , price_increased_count_mm , price_increased_count_yy , price_reduced_count , price_reduced_count_mm , price_reduced_count_yy , pending_listing_count , pending_listing_count_mm , pending_listing_count_yy , median_listing_price_per_square_ , median_listing_price_per_squar_1 , median_listing_price_per_squar_2 , median_square_feet , median_square_feet_mm , median_square_feet_yy FROM _TEMP0._barcharttaskdata;
+RUN;
+QUIT;
+
+PROC DATASETS NOLIST NODETAILS;
+CONTENTS DATA=WORK.query OUT=WORK.details;
+RUN;
+
+PROC PRINT DATA=WORK.details;
+RUN;
