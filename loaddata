@@ -1,0 +1,20 @@
+/* Generated Code (IMPORT) */
+/* Source File: RDC_Inventory_Core_Metrics_State (1).xlsx */
+/* Source Path: /home/u58243891/sasuser.v94 */
+/* Code generated on: 9/4/22, 5:06 PM */
+
+%web_drop_table(WORK.IMPORT);
+
+
+FILENAME REFFILE '/home/u58243891/sasuser.v94/RDC_Inventory_Core_Metrics_State (1).xlsx';
+
+PROC IMPORT DATAFILE=REFFILE
+	DBMS=XLSX
+	OUT=WORK.IMPORT;
+	GETNAMES=YES;
+RUN;
+
+PROC CONTENTS DATA=WORK.IMPORT; RUN;
+
+
+%web_open_table(WORK.IMPORT)
